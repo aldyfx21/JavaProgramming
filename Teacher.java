@@ -1,3 +1,4 @@
+// Teacher subclass
 class Teacher extends Person {
     private int numCourses = 0;
     private ArrayList<String> courses = new ArrayList<>();
@@ -7,23 +8,21 @@ class Teacher extends Person {
     }
 
     public boolean addCourse(String course) {
-        if (courses.contains(course)) {
-            return false;
-        } else {
+        if (!courses.contains(course)) {
             courses.add(course);
             numCourses++;
             return true;
         }
+        return false;
     }
 
     public boolean removeCourse(String course) {
-        if (!courses.contains(course)) {
-            return false;
-        } else {
+        if (courses.contains(course)) {
             courses.remove(course);
             numCourses--;
             return true;
         }
+        return false;
     }
 
     public String toString() {
