@@ -1,3 +1,4 @@
+// Student subclass
 class Student extends Person {
     private int numCourses = 0;
     private ArrayList<String> courses = new ArrayList<>();
@@ -14,7 +15,7 @@ class Student extends Person {
     }
 
     public void printGrades() {
-        System.out.println("Grades: ");
+        System.out.println("Grades for " + getName() + ":");
         for (int i = 0; i < numCourses; i++) {
             System.out.println(courses.get(i) + ": " + grades.get(i));
         }
@@ -25,7 +26,7 @@ class Student extends Person {
         for (int grade : grades) {
             sum += grade;
         }
-        return sum / (double) numCourses;
+        return numCourses > 0 ? (double) sum / numCourses : 0;
     }
 
     public String toString() {
