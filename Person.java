@@ -1,6 +1,7 @@
+// Person superclass
 class Person {
-    private String name;
-    private String address;
+    protected String name;
+    protected String address;
 
     public Person(String name, String address) {
         this.name = name;
